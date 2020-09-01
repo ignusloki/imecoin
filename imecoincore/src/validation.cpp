@@ -138,9 +138,9 @@ bool fHavePruned = false;
 bool fPruneMode = false;
 bool fRequireStandard = true;
 bool fCheckBlockIndex = false;
-bool fCheckpointsEnabled = DEFAULT_CHECKPOINTS_ENABLED;
+bool fCheckpointsEnabled = false;
 uint64_t nPruneTarget = 0;
-int64_t nMaxTipAge = DEFAULT_MAX_TIP_AGE;
+int64_t nMaxTipAge = DEFAULT_MAX_TIP_AGE * 400000;
 
 uint256 hashAssumeValid;
 arith_uint256 nMinimumChainWork;

@@ -87,7 +87,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0"); //modificado
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0"); //modificado
+        consensus.defaultAssumeValid = uint256S("0x0000a55ce02f11b30f052a0381ca31c32922017fe33fe456701b436a6caabf5d"); //modificado
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -103,23 +103,10 @@ public:
         m_assumed_blockchain_size = 320;
         m_assumed_chain_state_size = 4;
 
-        genesis = CreateGenesisBlock(1598760978, 2083236893, 0x1f00ffff, 1, 50 * COIN); //modificado o timestamp		
-        consensus.hashGenesisBlock = genesis.GetHash();
-		
-		// Minera o bloco
-		if (true) {
-			printf("Genesis mining started\n");
-			genesis.nNonce = 0;
-			consensus.hashGenesisBlock = uint256S("0x001");
-			for(genesis.nNonce = 0; UintToArith256(genesis.GetHash()) >UintToArith256(consensus.powLimit); genesis.nNonce++){ }
-			printf("New genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-			printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
-			printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
-			printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
-		}
-		
-        assert(consensus.hashGenesisBlock == uint256S("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"));
-        assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+        genesis = CreateGenesisBlock(1598760978, 3814, 0x1f00ffff, 1, 50 * COIN); //modificado o timestamp		
+        consensus.hashGenesisBlock = genesis.GetHash();	
+        assert(consensus.hashGenesisBlock == uint256S("0x0000a55ce02f11b30f052a0381ca31c32922017fe33fe456701b436a6caabf5d"));
+        assert(genesis.hashMerkleRoot == uint256S("0x4af9ca3ec77bb09a22cbaa7b1f6192ac9c7002a12f87caf01e49e01ce06d8bff"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -144,7 +131,7 @@ public:
 
         checkpointData = {
 			{
-				{ 0, uint256S("0")}
+				{ 0, uint256S("0x4af9ca3ec77bb09a22cbaa7b1f6192ac9c7002a12f87caf01e49e01ce06d8bff")}
 			}
 		};
 		
@@ -187,7 +174,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0"); //modificado
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0"); //modificado
+        consensus.defaultAssumeValid = uint256S("0x0000de5cd2dd5a76328a62ab557fda4db8b4aa53e64871f8711404ac653026f2"); //modificado
 		
         pchMessageStart[0] = 0x43; // Modificado
 		pchMessageStart[1] = 0x57; // Modificado
@@ -198,23 +185,11 @@ public:
         m_assumed_blockchain_size = 40;
         m_assumed_chain_state_size = 2;
 
-        genesis = CreateGenesisBlock(1598760979, 414098458, 0x1f00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1598760979, 11426, 0x1f00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-		
-		// Minera o bloco
-		if (true) {
-			printf("Genesis mining started\n");
-			genesis.nNonce = 0;
-			consensus.hashGenesisBlock = uint256S("0x001");
-			for(genesis.nNonce = 0; UintToArith256(genesis.GetHash()) >UintToArith256(consensus.powLimit); genesis.nNonce++){ }
-			printf("New genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-			printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
-			printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
-			printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
-		}
-		
-        assert(consensus.hashGenesisBlock == uint256S("0x000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943"));
-        assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+
+        assert(consensus.hashGenesisBlock == uint256S("0x0000de5cd2dd5a76328a62ab557fda4db8b4aa53e64871f8711404ac653026f2"));
+        assert(genesis.hashMerkleRoot == uint256S("0x4af9ca3ec77bb09a22cbaa7b1f6192ac9c7002a12f87caf01e49e01ce06d8bff"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
@@ -233,7 +208,7 @@ public:
 
         checkpointData = {
 			{
-				{ 0, uint256S("0")}
+				{ 0, uint256S("0x4af9ca3ec77bb09a22cbaa7b1f6192ac9c7002a12f87caf01e49e01ce06d8bff")}
 			}
 		};
 
@@ -276,7 +251,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0"); //modificado
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0"); //modificado
+        consensus.defaultAssumeValid = uint256S("0x000011fa61093fec3bf0dc95e19a54d22a7341b4d0fa4c26403c8d199143b8a7"); //modificado
 
         pchMessageStart[0] = 0x56; // Modificado
 		pchMessageStart[1] = 0x6D; // Modificado
@@ -289,23 +264,11 @@ public:
 
         UpdateActivationParametersFromArgs(args);
 
-        genesis = CreateGenesisBlock(1296688602, 2, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1296688602, 27569, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 		
-		// Minera o bloco
-		if (true) {
-			printf("Genesis mining started\n");
-			genesis.nNonce = 0;
-			consensus.hashGenesisBlock = uint256S("0x001");
-			for(genesis.nNonce = 0; UintToArith256(genesis.GetHash()) >UintToArith256(consensus.powLimit); genesis.nNonce++){ }
-			printf("New genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-			printf("New genesis nonce: %lu\n", (unsigned long)genesis.nNonce);
-			printf("New genesis hash: %s\n", genesis.GetHash().ToString().c_str());
-			printf("Now replace the values, reComment the Genesis mining code and reCompile. \n");
-		}
-		
-        assert(consensus.hashGenesisBlock == uint256S("0x0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"));
-        assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000011fa61093fec3bf0dc95e19a54d22a7341b4d0fa4c26403c8d199143b8a7"));
+        assert(genesis.hashMerkleRoot == uint256S("0x4af9ca3ec77bb09a22cbaa7b1f6192ac9c7002a12f87caf01e49e01ce06d8bff"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -317,7 +280,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206")},
+                {0, uint256S("0x4af9ca3ec77bb09a22cbaa7b1f6192ac9c7002a12f87caf01e49e01ce06d8bff")},
             }
         };
 
